@@ -26,7 +26,7 @@ class WeatherViewController: UIViewController,CLLocationManagerDelegate,ChangeCi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        temperatureLabel.isHidded = true
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
@@ -77,7 +77,7 @@ class WeatherViewController: UIViewController,CLLocationManagerDelegate,ChangeCi
         cityLabel.text = weatherDataModel.city
         temperatureLabel.text = "\(weatherDataModel.temperature)°C"
         weatherIcon.image = UIImage(named: weatherDataModel.weatherIconName)
-        
+        temperatureLabel.isHidded = false
     }
     
     //MARK: - Location Manager Delegate Methods
